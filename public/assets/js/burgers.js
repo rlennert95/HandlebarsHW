@@ -27,13 +27,13 @@ $(function() {
   
       var newBurger = {
         name: $("#ca").val().trim(),
-        sleepy: $("[name=eaten]:checked").val().trim()
+        eaten: $("[name=eaten]:checked").val()
       };
   
       // Send the POST request.
       $.ajax("/api/burgers", {
         type: "POST",
-        data: newEaten
+        data: newBurger
       }).then(
         function() {
           console.log("created new burger");
